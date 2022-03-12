@@ -1,0 +1,37 @@
+# Let's write some yaml code
+
+courses:
+  course_name: "DJango back and developer"
+  version: 1.5
+  price: &price 199
+  is_public: true
+  release_date: 2021-12-22 18:55:14
+  pre_enroll: null
+  tags:
+    - python
+    - mysql
+    - web developer
+  course_ta: ["anirudh", "aman" "ram"]
+  ta_details:
+    - name: "anirudh"
+      email: "ani@lco.dev"
+      role: "content admin"
+    - name: "aman"
+      email: "aman@lco.dev"
+      role: "discussion admin"
+    - {name: "ram", email: "rak@lco.dev, role:"devOps"}
+  short_desc: >
+    long Here is a quick crash course in YAML. YAML is a very easy serialization language, just like JSON and XML. It's solving the same problem i.e. to transfer data on a standard. You are going to see a lot of YAML in DevOps as this is a go-to standard in with the world of devops. We write a lot of YAML config files and post them on our blog section, so make sure to check out'
+  long_desc: |
+    Here is a quick crash course in YAML.
+      YAML is a very easy serialization language, just like JSON and XML. It's solving the same problem i.e. to transfer data on a standard. 
+        You are going to see a lot of YAML in DevOps as this is a go-to standard in with the world of devops. We write a lot of YAML config files and post them on our blog section,
+          so make sure to check out'
+  process_payment: *price
+
+  adv: &adv
+    mykey: myval
+  
+  another_adv:
+    one: two
+    <<: *adv
